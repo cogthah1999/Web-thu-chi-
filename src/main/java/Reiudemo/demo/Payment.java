@@ -17,6 +17,11 @@ import lombok.Data;
 @Table(name = "payments")
 @Data
 public class Payment {
+
+    static double getAmount(Payment value) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,4 +39,13 @@ public class Payment {
 
     private String type;
 
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
 }    

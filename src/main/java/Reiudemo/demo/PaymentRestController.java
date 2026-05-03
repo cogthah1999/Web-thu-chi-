@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/payments") // Mọi đường dẫn sẽ bắt đầu bằng /api/payments
-@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*", exposedHeaders = "Authorization") // Cho phép
+@CrossOrigin(origins = "*", allowedHeaders = "*", exposedHeaders = "Authorization") // Cho phép
                                                                                                         // frontend
                                                                                                         // React truy
                                                                                                         // cập

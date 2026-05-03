@@ -1,11 +1,15 @@
-# Sử dụng Java 21 như hôm qua mình đã thống nhất
+# Giai đoạn 1: Build dự án
 FROM maven:3.9.6-eclipse-temurin-21 AS build
+WORKDIR /app
 COPY . .
-# Chui vào thư mục demo để build (Vì pom.xml nằm ở đó)
-RUN mvn -f demo/pom.xml clean package -DskipTests
+# Sửa lại: bỏ chữ demo/ vì pom.xml nằm ngay tại đây
+RUN mvn clean package -DskipTests
 
+# Giai đoạn 2: Chạy dự án
 FROM eclipse-temurin:21-jre-jammy
-# Copy file jar từ thư mục target bên trong demo
-COPY --from=build /demo/target/*.jar demo.jar
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
+# Sửa lại: Copy từ thư mục target (không có demo/)
+COPY data.db data.db
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

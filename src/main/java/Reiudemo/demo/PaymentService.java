@@ -12,6 +12,15 @@ public class PaymentService {
 
     public double calculateTotal(List<Payment> payments) {
         if (payments == null) return 0;
-        return payments.stream().mapToDouble(Payment::getAmount).sum();
+        return payments.stream().mapToDouble(p -> p.getAmount()).sum();
     }
+
+    public Payment savePayment(Payment payment) {
+        // TODO Auto-generated method stub
+        if (payment.getAmount() <= 0) {
+            throw new IllegalArgumentException("Số tiền không được âm");
+        }
+        return paymentRepository.save(payment);
+    }
+
 }

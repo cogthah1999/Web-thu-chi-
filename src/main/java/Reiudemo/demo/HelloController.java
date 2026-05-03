@@ -5,12 +5,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller; // Dòng này quan trọng
-import org.springframework.ui.Model; // Đảm bảo đã import Model
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model; // Dòng này quan trọng
+import org.springframework.web.bind.annotation.GetMapping; // Đảm bảo đã import Model
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam; // Import này cần thiết nếu bạn muốn sử dụng @PathVariable
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -33,11 +33,11 @@ public class HelloController {
         }
         Map<String, Double> summaryMap = list.stream()
             .collect(Collectors.groupingBy(
-                Payment::getPaymentType, 
-                Collectors.summingDouble(Payment::getAmount)
+                Payment -> Payment.getPaymentType(), 
+                Collectors.summingDouble(Payment -> Payment.getAmount())
             ));
     
-        double total = list.stream().mapToDouble(Payment::getAmount).sum();
+        double total = list.stream().mapToDouble(Payment -> Payment.getAmount()).sum();
     
         model.addAttribute("payments", list);
         model.addAttribute("totalBalance", total);
