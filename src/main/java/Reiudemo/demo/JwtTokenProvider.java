@@ -17,11 +17,12 @@ public class JwtTokenProvider {
     // 3. Thời gian hết hạn (Dòng bạn đang thiếu đây)
     private final long expiration = 86400000L; 
 
-    public String generateToken(String username) {
+    public String generateToken(String username, String role) {
         return Jwts.builder()
                 .setSubject(username)
+                .claim("role", role)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + expiration)) // Hết lỗi đỏ tại đây
+                .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(key)
                 .compact();
     }

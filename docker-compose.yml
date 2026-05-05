@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    container_name: my-postgres-db
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: web_thu_chi
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    container_name: wallet-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/web_thu_chi
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+

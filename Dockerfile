@@ -1,9 +1,12 @@
 # Giai đoạn 1: Build dự án
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
+
 COPY . .
+
 # Sửa lại: bỏ chữ demo/ vì pom.xml nằm ngay tại đây
 RUN mvn clean package -DskipTests
+
 
 # Giai đoạn 2: Chạy dự án
 FROM eclipse-temurin:21-jre-jammy

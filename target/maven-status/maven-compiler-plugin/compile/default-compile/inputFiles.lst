@@ -3,8 +3,11 @@ D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\DemoApplication.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\HelloController.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\JwtAuthenticationFilter.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\JwtTokenProvider.java
+D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\LoginRequest.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\Payment.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\PaymentRepository.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\PaymentRestController.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\PaymentService.java
 D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\SecurityConfig.java
+D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\User.java
+D:\CODE\springweb\demo\src\main\java\Reiudemo\demo\UserRepository.java

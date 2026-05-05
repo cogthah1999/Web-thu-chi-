@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: Reiudemo.demo.PaymentServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.703 s -- in Reiudemo.demo.PaymentServiceTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.02 s <<< FAILURE! -- in Reiudemo.demo.PaymentServiceTest
+Reiudemo.demo.PaymentServiceTest.user_cannot_delete_payment -- Time elapsed: 0.351 s <<< ERROR!
+java.lang.UnsupportedOperationException: Not supported yet.
+	at Reiudemo.demo.PaymentServiceTest.delete(PaymentServiceTest.java:109)
+	at Reiudemo.demo.PaymentServiceTest.user_cannot_delete_payment(PaymentServiceTest.java:104)
+
